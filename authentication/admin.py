@@ -11,13 +11,13 @@ class UserAdmin(BaseUserAdmin):
     form = UserChangeForm
     model = User
     list_display = (
-        "email", "first_name", "last_name", "is_staff")
+        "email", "phone_number", "first_name", "last_name", "is_staff")
     list_filter = (
         "is_staff", "is_superuser", "is_active", "groups")
     fieldsets = (
         (None, {"fields": ("email", "password")}),
         ("Personal info", {"fields": (
-            "first_name", "last_name")}),
+            "first_name", "last_name", "phone_number")}),
         ("Permissions", {"fields": (
             "is_active", "is_staff", "is_superuser", "groups", "user_permissions")}),
         ("Important Dates", {"fields": (
@@ -27,11 +27,11 @@ class UserAdmin(BaseUserAdmin):
         (None, {
             "classes": ("wide",),
             "fields": (
-                "email", "password1", "password2"
+                "email", "phone_number", "password1", "password2"
             )}),
     )
-    search_fields = ("email")
-    ordering = ("email")
+    search_fields = ("email", "phone_number")
+    ordering = ("email", "phone_number")
 
 
 admin.site.register(User, UserAdmin)

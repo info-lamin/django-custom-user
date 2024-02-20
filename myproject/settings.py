@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'authentication',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_PROFILE_MODULE = 'authentication.User'
 AUTH_USER_MODEL = 'authentication.User'
+
+PHONENUMBER_DEFAULT_REGION = 'IN'
